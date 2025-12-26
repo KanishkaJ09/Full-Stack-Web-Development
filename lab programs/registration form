@@ -1,1 +1,109 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+
+    <!-- CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+        }
+
+        .container {
+            width: 350px;
+            margin: 80px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 10px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Registration Form</h2>
+
+    <form id="regForm">
+        <label>Full Name</label>
+        <input type="text" id="name" required>
+
+        <label>Email</label>
+        <input type="email" id="email" required>
+
+        <label>Password</label>
+        <input type="password" id="password" required>
+
+        <label>Gender</label>
+        <select id="gender" required>
+            <option value="">Select</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+        </select>
+
+        <label>Course</label>
+        <input type="text" value="FSWD" required>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p id="message"></p>
+</div>
+
+<!-- JavaScript -->
+<script>
+    document.getElementById("regForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+
+        if (name === "" || email === "") {
+            alert("All fields are required!");
+            return;
+        }
+
+        document.getElementById("message").innerText =
+            "Registration Successful!";
+    });
+</script>
+
+</body>
+</html>
 
