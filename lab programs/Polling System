@@ -1,0 +1,28 @@
+
+import { useState } from "react";
+
+export default function Poll() {
+  const [yes, setYes] = useState(0);
+  const [no, setNo] = useState(0);
+
+  return (
+    <>
+      <h2>Task 4: Classroom Poll</h2>
+      <p>Do you like React?</p>
+
+      <button onClick={() => setYes(yes + 1)}>Yes</button>
+      <button onClick={() => setNo(no + 1)}>No</button>
+
+      <p>Yes Votes: {yes}</p>
+      <p>No Votes: {no}</p>
+    </>
+  );
+}
+
+
+app.jsx
+import Poll from "./form/Poll";
+
+export default function App() {
+  return <Poll />;
+}
