@@ -1,0 +1,38 @@
+import { useState } from "react";
+
+export default function Quiz() {
+  const [score, setScore] = useState(0);
+  const [answered, setAnswered] = useState(false);
+
+  const checkAnswer = (isCorrect) => {
+    if (!answered) {
+      if (isCorrect) {
+        setScore(score + 1);
+      }
+      setAnswered(true);
+    }
+  };
+
+  return (
+    <>
+      <h2>Task 3: Online Quiz</h2>
+      <p>React is a ___ library?</p>
+
+      <button onClick={() => checkAnswer(true)}>JavaScript</button>
+      <button onClick={() => checkAnswer(false)}>Python</button>
+      <button onClick={() => checkAnswer(false)}>Java</button>
+
+      <p>Score: {score}</p>
+    </>
+  );
+}
+
+
+
+
+app.jsx
+import Quiz from "./form/Quiz";
+
+export default function App() {
+  return <Quiz />;
+}
